@@ -23,52 +23,52 @@ class _CounterState extends State<Counter> {
 
   @override
   Widget build(BuildContext context) {
-    final counterProvider =
-        Provider.of<CounterProvider>(context, listen: false);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        centerTitle: true,
-        title: Text(
-          "Flutter Provider",
-          style: AppTextStyles.normalText,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          centerTitle: true,
+          title: Text(
+            "Flutter Provider",
+            style: AppTextStyles.normalText,
+          ),
         ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          title(),
-          const SizedBox(
-            height: 5,
-          ),
-          subTitle(),
-          const SizedBox(
-            height: 25,
-          ),
-          Consumer<CounterProvider>(builder: (context, value, child) {
-            return Center(
-              child: Text(
-                value.count.toString(),
-                style: AppTextStyles.header,
-              ),
-            );
-          }),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => counterProvider.setCount(),
-        backgroundColor: Colors.black,
-        mini: true,
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-          size: 20,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 10,
+            ),
+            title(),
+            const SizedBox(
+              height: 5,
+            ),
+            subTitle(),
+            const SizedBox(
+              height: 25,
+            ),
+            Consumer<CounterProvider>(builder: (context, value, child) {
+              return Center(
+                child: Text(
+                  value.count.toString(),
+                  style: AppTextStyles.header,
+                ),
+              );
+            }),
+          ],
         ),
-      ),
-    );
+        floatingActionButton:
+            Consumer<CounterProvider>(builder: (context, value, child) {
+          return FloatingActionButton(
+            onPressed: () => value.setCount(),
+            backgroundColor: Colors.black,
+            mini: true,
+            child: const Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 20,
+            ),
+          );
+        }));
   }
 
   Widget title() {

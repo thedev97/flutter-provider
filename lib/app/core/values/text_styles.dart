@@ -33,4 +33,13 @@ class AppTextStyles {
       ],
       color: Colors.white);
 
+  static final TextStyle valueText = GoogleFonts.lato(
+      fontWeight: FontWeight.w500,
+      fontSize: 12,
+      shadows: [
+        const Shadow(
+            color: Colors.white, offset: Offset(0.0, 0.2), blurRadius: 0.2),
+      ],
+      color: Colors.white);
+
 }
