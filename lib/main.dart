@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'app/modules/auth/login.dart';
+import 'app/provider/auth_state.dart';
 import 'app/provider/theme_state.dart';
 import 'package:provider/provider.dart';
 import 'app/provider/slider_state.dart';
 import 'app/provider/counter_state.dart';
 import 'app/provider/favourite_state.dart';
-import 'app/modules/value-notifer/value_notifer_listener.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (_) => ThemeProvider(),
           ),
+          ChangeNotifierProvider(
+            create: (_) => AuthProvider(),
+          ),
         ],
         child: Builder(
           builder: (BuildContext context) {
@@ -42,7 +46,7 @@ class MyApp extends StatelessWidget {
               ),
               themeMode: themeChangerProvider.themeMode,
               darkTheme: ThemeData(brightness: Brightness.dark),
-              home: ValueNotifierPage(),
+              home: const Login(),
             );
           },
         ));
