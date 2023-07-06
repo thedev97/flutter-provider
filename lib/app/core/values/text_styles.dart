@@ -42,6 +42,24 @@ class AppTextStyles {
       ],
       color: Colors.white);
 
+  static final TextStyle radioValueText = GoogleFonts.lato(
+      fontWeight: FontWeight.w500,
+      fontSize: 12,
+      shadows: [
+        const Shadow(
+            color: Colors.white, offset: Offset(0.0, 0.5), blurRadius: 0.5),
+      ],
+      color: Colors.black);
+
+  static final TextStyle darkRadioValueText = GoogleFonts.lato(
+      fontWeight: FontWeight.w500,
+      fontSize: 12,
+      shadows: [
+        const Shadow(
+            color: Colors.white, offset: Offset(0.0, 0.2), blurRadius: 0.2),
+      ],
+      color: Colors.grey);
+
   static final TextStyle listText = GoogleFonts.lato(
       fontWeight: FontWeight.w500,
       fontSize: 12,
@@ -50,5 +68,4 @@ class AppTextStyles {
             color: Colors.white, offset: Offset(0.0, 0.2), blurRadius: 0.2),
       ],
       color: Colors.black);
-
 }
