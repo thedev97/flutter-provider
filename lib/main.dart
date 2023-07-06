@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:master_provider/app/core/values/values.dart';
 import 'app/provider/theme_state.dart';
 import 'package:provider/provider.dart';
 import 'app/provider/slider_state.dart';
 import 'app/provider/counter_state.dart';
 import 'app/provider/favourite_state.dart';
-import 'app/modules/theme/theme_mode.dart';
+import 'app/modules/value-notifer/value_notifer_listener.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
               ),
               themeMode: themeChangerProvider.themeMode,
               darkTheme: ThemeData(brightness: Brightness.dark),
-              home: const ThemeChanger(),
+              home: ValueNotifierPage(),
             );
           },
         ));
